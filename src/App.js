@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import MyNav from "./components/navbar/MyNav";
+import MyFooter from "./components/footer/MyFooter";
+import AllTheBooks from "./components/allTheBooks/AllTheBooks";
+import AlertWelcome from './components/welcome/Welcome';
+import FantasyBook from "./dataBooks/fantasy.json"
+import { useState } from "react";
+import SearchBar from "./components/searchBar/SearchBar";
+//Add Welcome
 
 function App() {
+
+  const [books, setBooks] = useState(FantasyBook)
+  const [booksStart, setBooksStart] = useState(FantasyBook)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <MyNav />
+      <SearchBar allBooks={books} setBooks={setBooks} booksStart={booksStart}/>
+      <AlertWelcome />
+      <AllTheBooks allBooks={books}/>
+      <MyFooter />
+    </>
+
   );
 }
 
