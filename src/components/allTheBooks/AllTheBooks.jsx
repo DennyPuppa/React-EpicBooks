@@ -18,6 +18,7 @@ const AllTheBooks = (props) => {
                             img={book.img}
                             price={book.price}
                             category={book.category}
+                            asin={book.asin}
                         />
                     </Col>
                 ))}
