@@ -1,25 +1,20 @@
-import MyNav from "./components/navbar/MyNav";
-import MyFooter from "./components/footer/MyFooter";
-import AllTheBooks from "./components/allTheBooks/AllTheBooks";
-import AlertWelcome from './components/welcome/Welcome';
-import FantasyBook from "./dataBooks/fantasy.json"
-import { useState } from "react";
-import SearchBar from "./components/searchBar/SearchBar";
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage"
+import BookDetails from "./pages/BookDetails"
+import ErrorPage from "./pages/ErrorPage"
 //Add Welcome
 
 function App() {
 
-  const [books, setBooks] = useState(FantasyBook)
-  const [booksStart, setBooksStart] = useState(FantasyBook)
-
   return (
-    <>
-      <MyNav />
-      <SearchBar allBooks={books} setBooks={setBooks} booksStart={booksStart}/>
-      <AlertWelcome />
-      <AllTheBooks allBooks={books}/>
-      <MyFooter />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route index element={<HomePage/>}/>
+        <Route path="/book/:asin" element={<BookDetails/>}/>
+        <Route path="*" element={<ErrorPage/>}/>
+      </Routes>
+    </BrowserRouter>
 
   );
 }

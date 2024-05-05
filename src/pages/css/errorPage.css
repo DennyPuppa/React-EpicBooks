@@ -1,0 +1,10 @@
+.error-gif{
+    width: 600px;
+    height: 400px;
+}
+
+.footer-fix{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
