@@ -13,7 +13,7 @@ const AlertWelcome = () => {
             <Row>
                 <Col>
                     <Alert key="dark" variant={isDarkMode ? "light" : "dark"}>
-                        Welcome to EpicBooks!
+                        <h1>Welcome to EpicBooks!</h1>
                     </Alert>
                 </Col>
             </Row>

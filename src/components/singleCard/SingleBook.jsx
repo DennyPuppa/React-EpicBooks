@@ -23,7 +23,7 @@ const SingleBook = ({ asin, title, img, price, category }) => {
 
     return (
         <>
-            <div className={selected ? "card-selected" : ""}>
+            <div className={selected ? "card-selected" : ""} data-testid="book-card">
                 <div className={isDarkMode ? "card-container-dark my-3 text-white" : "card-container-light my-3"}>
                     <h2 className="card-title py-2 text-truncate">{title}</h2>
                     <img className="card-img" src={img} alt={title} />

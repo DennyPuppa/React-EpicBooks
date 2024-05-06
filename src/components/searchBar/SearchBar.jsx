@@ -28,7 +28,7 @@ const SearchBar = (props) => {
             <Row>
                 <Col>
                     <div className="d-flex justify-content-between gap-3 py-3">
-                        <input className="w-100" type="text" onChange={handleInput}/>
+                        <input className="w-100" type="text" placeholder="Search a book" onChange={handleInput}/>
                         <button onClick={filterBooks} className="btn btn-primary">Search</button>
                     </div>
                 </Col>
